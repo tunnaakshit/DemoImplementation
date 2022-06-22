@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: Variables
+    
     // MARK: Outlets
     
     
@@ -22,8 +24,19 @@ class ViewController: UIViewController {
     // MARK: Actions
     @IBAction func buttonPressed(_ sender: Any) {
         print("Button Pressed")
-        
-        
+        self.completionHandlerFunctionality(parameter: false, completionHandler: { (success) -> Void in
+            if(success) {
+                print("Success")
+            } else{
+                print("Failure")
+            }
+        })
+    }
+    
+    // MARK: Other Functions
+    func completionHandlerFunctionality(parameter: Bool, completionHandler: (_ param: Bool) -> ()) {
+        let flag = parameter
+        completionHandler(flag)
     }
 }
 
