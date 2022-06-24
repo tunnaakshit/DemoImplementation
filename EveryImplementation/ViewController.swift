@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.imageToData(image: UIImage(named: "imageToData-2"))
     }
 
 
@@ -37,6 +38,16 @@ class ViewController: UIViewController {
     func completionHandlerFunctionality(parameter: Bool, completionHandler: (_ param: Bool) -> ()) {
         let flag = parameter
         completionHandler(flag)
+    }
+    
+    func imageToData(image: UIImage?) {
+        if let image = image {
+            if let imageData = image.pngData() {
+                let strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
+                print(strBase64)
+            }
+        }
+        
     }
 }
 
