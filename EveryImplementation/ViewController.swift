@@ -38,5 +38,9 @@ class ViewController: UIViewController {
         let flag = parameter
         completionHandler(flag)
     }
+    
+    func testPullRequest() {
+        print("Pull request listed")
+    }
 }
 
